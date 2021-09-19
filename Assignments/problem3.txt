@@ -1,0 +1,22 @@
+class ImdbDataset:
+    def __init__(self):
+        self.movie = {}
+    def addmovie(self):
+        self.movie = {}
+    def viewmovie(self):
+        self.movie_name = input("Enter movie name: ")
+        self.movie['movie_name'] = self.movie_name
+    def viewmovies(self):
+        self.movie['name']  = input("enter name: ")
+        self.movie['Actor names'] = input("enter actor names: ")
+        self.movie['genres'] = input('Enter genre: ')
+        self.movie['awards'] = input("enter awards: ")
+        self.movie['Imdb_Rating'] = float(input("Enter Rating: "))
+        self.movie['Cost of Production'] = input("Enter cost of production: ")
+        
+array = []      
+a = ImdbDataset()
+a.viewmovie()
+a.viewmovies()
+array.append(a.movie)
+print(array)

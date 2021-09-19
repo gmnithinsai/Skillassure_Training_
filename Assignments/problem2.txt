@@ -1,0 +1,72 @@
+Driver = input('Enter Name:')
+a = int(input(' 1 Race \n 2 Engine \n 3 Gear \n 4 Brakes \n 5 Steering wheel'))
+print('='*20)
+print(' Race- Start, Stop \n Engine - Start, Stop\n Gear - Increase, Reduce (Car has 4 gears)\n Brakes - On, Off\n Steering Wheel - Left, Right, Straight')
+warnings = 0
+if a == 1:
+    engine = input('engine: start or stop: ')
+    if engine != 'start':
+        print('Your race is not started')
+        
+    else:
+        gear = input('You are in gear 0 choose increase/reduce to change gear:')
+        gears = 1
+        if gear == 'increase':
+            driver_race = input("Enter your way of driving with options by giving spaces").split()
+        else:
+            print('You cant make move')
+else:
+    print(Driver, "You are eliminated by the race authorities team")
+
+            
+if driver_race[0] != 'straight':
+    print('you are disqulified by race authorities')
+elif driver_race[-1] != 'stop':
+    print('You are disqulified by race authorities')
+else:
+    rights = list_duplicates_of(driver_race, 'right')
+    print(rights)
+    for i in rights:
+        if driver_race[i-1] != 'on':
+            warnings+=1
+        print(warnings)
+        if driver_race[i+1]!= 'straight':
+            print('you are disqualified by race authorities')
+    print(warnings)          
+    for k in rights:
+        gears_before_turn = []
+        for j in range(len(driver_race[k])):
+            if j == 'increase':
+                gears +=1
+            elif j == 'reduce':
+                gears-=1
+        gears_before_turn.append(gears)
+                
+                
+for k in gears_before_turn:
+    if k>3:
+        warnings+=1
+        
+print(warnings)
+if warnings > 3:
+    print('You are disqulified by testing team')
+else:
+    print('You have succesfully completed the race and no of laps are: ',len(rights)//3)
+            
+                
+    
+def list_duplicates_of(seq,item):
+    start_at = -1
+    locs = []
+    while True:
+        try:
+            loc = seq.index(item,start_at+1)
+        except ValueError:
+            break
+        else:
+            locs.append(loc)
+            start_at = loc
+    return locs
+
+
+    

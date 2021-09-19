@@ -1,0 +1,39 @@
+poem = input("Enter poem: ").split()
+out_word = input("Enter out word: ")
+n = int(input("Enter no of players : "))
+players = []
+index_ow = []
+for _ in range(n):
+    players.append(input("Enter player name: "))
+
+def list_duplicates_of(seq,item):
+    start_at = -1
+    locs = []
+    while True:
+        try:
+            loc = seq.index(item,start_at+1)
+        except ValueError:
+            break
+        else:
+            locs.append(loc)
+            start_at = loc
+    return locs
+
+index_ow = list_duplicates_of(poem, out_word)
+  
+count_players = len(players)
+count = 0
+while len(players)!=1:
+    for i in index_ow:
+        if len(players)!=1:
+            #if count!=0:
+            #     i = index_ow[1]-index_ow[0]
+            eliminate_player = (i+1)%(len(players))
+            #count+=1
+            #print(eliminate_player)
+            print(players[eliminate_player-1],"eliminated player")
+            players.pop(eliminate_player-1)
+            #print(players)
+        else:
+            print(players[0],'is winner')
+            break
