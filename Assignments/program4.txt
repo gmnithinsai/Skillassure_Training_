@@ -1,0 +1,74 @@
+
+dollars= int(input("enter the number of dollars for each hour: "))
+hours = int(input('Enter the total number of hours consumed by vendor resources: '))
+
+# Checking for vendor consulted external resources 
+External_Res = input('Used External Resources:yes/no ')
+if External_Res == 'yes':
+    dollars_E = int(input('Enter the no of dollars for external resources: '))
+    hours_E = int(input("Enter no of hours by external resources"))
+else:
+    dollars_E = 0
+    hours_E = 0
+
+# checking for available software or hardware used or not
+Hardware_I = input('available hardware used: yes/no ')
+software_I = input('available software used: yes/no ')
+
+if Hardware_I =='yes':
+    Hardware_I_cost = int(input('Enter Hardware cost: '))
+else:
+    Hardware_I_cost = 0
+    
+if software_I == 'yes':
+    Software_I_cost = int(input('Enter software cost: '))
+else:
+    Software_I_cost = 0
+
+# checking for software is proprietary of client technology this will spent by client itself
+software_E = input('Does software is infrequently used or proprietary of client technology: yes/no ')
+if software_E == 'yes':
+    software_E_cost = int(input('Enter cost of software'))
+else:
+    software_E_cost = 0
+    
+class VendorBillings:
+    def __init__(self, dollars, hours, dollars_E, hours_E,Hardware_I_cost, software_I_cost, software_E_cost ):
+        self.dollars = dollars
+        self.hours = hours
+        self.dollars_E = dollars_E
+        self.hours_E = hours_E
+        self.Hardware = Hardware_I_cost
+        self.software = software_I_cost
+        self.softwareE = software_E_cost
+    def InternalResources(self):
+        return self.dollars*self.hours
+    def ExternalResources(self):
+        return self.dollars_E * self.hours_E
+    def InternalHardware(self):
+        return self.Hardware*0.3
+    def InternalSoftware(self):
+        return self.software*0.5
+    def ExternalSoftware(self):
+        return self.softwareE
+    
+billing = VendorBillings(dollars, hours, dollars_E, hours_E, Hardware_I_cost, Software_I_cost, software_E_cost)
+
+ResIcost = billing.InternalResources()
+Res_E_cost = billing.ExternalResources()
+Used_sw_cost = billing.InternalSoftware()
+used_hw_cost = billing.InternalHardware()
+client_sw_cost = billing.ExternalSoftware()
+
+# amount given by the client to vendor 
+ClientProvidedAmount = ResIcost + Used_sw_cost + used_hw_cost + client_sw_cost
+# amount invested by vendor
+VendorExpenditure = ResIcost + Res_E_cost 
+
+if ClientProvidedAmount > Expenditure:
+    print('Profit')
+else:
+    print('Loss')
+
+        
+        

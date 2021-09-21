@@ -1,0 +1,19 @@
+'''.Write a program to do the following:
+
+   a. Input: 270176(integer)
+
+   b. Output: Two Seven Zero One Seven Six
+
+'''
+
+num_list = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+num = input('Enter a Number: ')
+for i in num:
+    print(num_list[int(i)], end = ' ')
+
+# Write a program to find the reverse of a number. Store the reverse value in a different variable. Display the reverse.
+
+
+number = input('Enter a number: ')
+reverse_num = number[::-1]
+print('reversed number:',reverse_num)
