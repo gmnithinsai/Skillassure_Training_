@@ -1,0 +1,186 @@
+S.No	Question
+
+Q1	Nurse wants an Address for all Members in the system to contact them in case of emergency, recommend practices for well-being.
+
+        Write a Query to provide the data set to the Nurse.
+
+
+Q2	Doctors wants to see the list of all ECG reports in the system which should be ordered from initial record to current record (i.e., it should be ordered with respect to the ECG report taken date).
+        
+        Write a Query to provide the data set to the Doctor.
+
+
+Q3	Doctor wants a list of Members who has cholesterol ( SerumCholestrol)  level more than 230 and doesn't face any cardio diagnosis (cardioarrestdetected as 0) till now, the doctor needs to give medical advice to them. 
+        
+        Write a Query to provide the data set to the Doctor.
+
+
+Q4	Supervisor wants to know the Count of Xray reports for the month of Oct 2019 on a daily basis .
+	(Kindly use the predefined functions to get the Month and Year values)
+	
+	Write a Query to provide the data set to the Supervisor.
+
+
+Q5	The Product Owner of HeartiHealth has given a new requirement to capture more information about the member's health. 
+	We are currently facing difficulties in providing the  treatment without the member's past health information, 
+	We should be capture the following information  in our system        
+	o   Disease Name
+	o   Encountered Date
+	o   TreatmentTakenByMember
+	We need to incorporate this into the system. DB Design should be provided considering the requirement mentioned on top.
+	We should have a good design which is reusable and also enable analytics to identify which treatment will be suitable for the member/user..
+	Output Needed
+	o   Entities (Tables), Data Elements, Relationship 
+
+
+
+Q6	The Product Owner of HeartiHealth has given a new requirement to capture more information about the WearableDeviceData.
+	We are currently not able to get the device info, So we should be capture the following information in the system        
+	o   Device Name	
+	o   Device Description 
+	o   Device Brand   
+
+	We need to incorporate this into the system. DB Design should be provided considering the requirement mentioned on top.
+	We should have a good design which is reusable and also enable analytics in the future on how many types of devices are used by the members
+
+	Output Needed
+	o   Entities (Tables), Data Elements, Relationship 
+
+
+Q7	Nurse wants a Wearable Device Information for all Members in the system to recommend practices for well-being. 
+	
+	Write a Query to provide the data set to the Nurse.
+
+
+Q8	"Doctors wants to see the list of all Xray reports in the system which should be ordered from initial record to current record (i.e, it should be ordered with respect to the Xray report taken date).
+
+	Write a Query to provide the data set to the Doctor.
+
+
+Q9	Doctor wants a list of all Member who has chestpain ( cp > 0 )  and doesn't face any cardio diagnosis (cardioarrestdetected as 0) till now, the doctor needs to give medical advice to them. 
+
+	Write a Query to provide the data set to the Doctor.
+
+
+Q10	Supervisor wants to know the Count of ECG reports for the month of Nov 2019 on a daily basis. 
+	(Kindly use the predefined functions to get the Month and Year values)
+
+	Write a Query to provide the data set to the Supervisor.
+
+
+Q11	The Product Owner of HeartiHealth has given a new requirement to capture more information about the member's health. 
+	We are currently facing difficulties in providing the  treatment without the member's past health information, 
+	We should be capture the following information  in our system        
+	o   Disease Name
+	o   Encountered Date
+	o   TreatmentTakenByMember
+	We need to incorporate this into the system. DB Design should be provided considering the requirement mentioned on top.
+	We should have a good design which is reusable and also enable analytics to identify which treatment will be suitable for the member/user..
+	Output Needed
+	o   Entities (Tables), Data Elements, Relationship 
+
+
+Q12	The Product Owner of HeartiHealth has given a new requirement to capture more information about the WearableDeviceData.
+	We are currently not able to get the device info, So we should be capture the following information in the system        
+	o   Device Name
+	o   Device Description 
+	o   Device Brand   
+
+	We need to incorporate this into the system. DB Design should be provided considering the requirement mentioned on top.
+	We should have a good design which is reusable and also enable analytics in the future on how many types of devices are used by the members
+
+	Output Needed
+	o   Entities (Tables), Data Elements, Relationship 
+
+Q13	Nurse wants the ECG reports of all Members in the system to recommend practices for well-being.
+	
+	Write a Query to provide the data set to the Nurse.
+
+
+Q14	Doctors wants to see the list of wearable device information in the system which should be ordered from initial record to current record (i.e, it should be ordered with respect to the wearable device info recorded date).
+
+	Write a Query to provide the data set to the Doctor.
+
+
+Q15	Doctor wants a list of Member who has  fasting blood sugar( fbs)  level more than 99 and doesn't face any cardio diagnosis (cardioarrestdetected as 0) till now, the doctor needs to give medical advice to them. 
+	
+	Write a Query to provide the data set to the Doctor.
+
+
+Q16	Supervisor wants to know the Count of Blood test for the month of Oct 2019 on a daily basis. 
+	(Kindly use the predefined functions to get the Month and Year values)
+
+	Write a Query to provide the data set to the Supervisor.
+
+
+Q17	The Product Owner of HeartiHealth has given a new requirement to capture more information about the member's health. 
+	We are currently facing difficulties in providing the  treatment without the member's past health information, 
+	We should be capture the following information  in our system        
+	o   Disease Name
+	o   Encountered Date
+	o   TreatmentTakenByMember
+	We need to incorporate this into the system. DB Design should be provided considering the requirement mentioned on top.
+	We should have a good design which is reusable and also enable analytics to identify which treatment will be suitable for the member/user..
+	Output Needed
+	o   Entities (Tables), Data Elements, Relationship 
+
+
+Q18	The Product Owner of HeartiHealth has given a new requirement to capture more information about the WearableDeviceData.
+	We are currently not able to get the device info, So we should be capture the following information in the system        
+	o   Device Name
+	o   Device Description 
+	o   Device Brand   
+
+	We need to incorporate this into the system. DB Design should be provided considering the requirement mentioned on top.
+	We should have a good design which is reusable and also enable analytics in the future on how many types of devices are used by the members
+
+	Output Needed
+	o   Entities (Tables), Data Elements, Relationship 
+
+
+Q19	Nurse wants the  Xray reports of all Members in the system to recommend practices for well-being.
+
+	Write a Query to provide the data set to the Nurse.
+
+
+Q20	Doctors wants to see the list of blood test information in the system which should be ordered from initial record to current record (i.e, it should be ordered with respect to the blood test taken date).
+	
+	Write a Query to provide the data set to the Doctor.
+
+
+Q21	Doctor wants a list of Member who has  blood pressure level more than 145 and doesn't face any cardio diagnosis (cardioarrestdetected as 0) till now, the doctor needs to give medical advice to them. 
+	
+	Write a Query to provide the data set to the Doctor.
+
+
+Q22	Supervisor wants to know the Count of  wearable-device information recorded for the month of Oct 2019 on a daily basis. 
+	(Kindly use the predefined functions to get the Month and Year values)
+
+	Write a Query to provide the data set to the Supervisor.
+
+
+Q23	The Product Owner of HeartiHealth has given a new requirement to capture more information about the member's health. 
+	We are currently facing difficulties in providing the  treatment without the member's past health information, 
+	We should be capture the following information  in our system        
+	o   Disease Name
+	o   Encountered Date
+	o   TreatmentTakenByMember
+	We need to incorporate this into the system. DB Design should be provided considering the requirement mentioned on top.
+	We should have a good design which is reusable and also enable analytics to identify which treatment will be suitable for the member/user..
+	Output Needed
+	o   Entities (Tables), Data Elements, Relationship 
+
+
+Q24	The Product Owner of HeartiHealth has given a new requirement to capture more information about the WearableDeviceData.
+	We are currently not able to get the device info, So we should be capture the following information in the system        
+	o   Device Name
+	o   Device Description 
+	o   Device Brand   
+	
+	We need to incorporate this into the system. DB Design should be provided considering the requirement mentioned on top.
+	We should have a good design which is reusable and also enable analytics in the future on how many types of devices are used by the members
+
+	Output Needed
+	o   Entities (Tables), Data Elements, Relationship 
+
+
