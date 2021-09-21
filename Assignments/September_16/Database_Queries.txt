@@ -1,0 +1,120 @@
+QUERY 1:
+
+SELECT city ,state,country,pincode FROM addressinfo;
+===================================================================================================
+QUERY 2:
+
+SELECT * FROM ECGREPORT ORDER BY DATE
+====================================================================================================
+QUERY 3:
+
+SELECT CARDIODIAGNOSIS.MEMBERINFO_MEMBER_ID FROM CARDIODIAGNOSIS INNER JOIN BLOODTEST 
+ON BLOODTEST.CARDIODIAGNOSIS_CARDIO_ID = CARDIODIAGNOSIS.CARDIO_ID
+WHERE CARDIODIAGNOSIS.CARDIOARRESTDETECTED = 0 AND BLOODTEST.SERUMCHOLESTEROL >230
+====================================================================================================
+QUERY 4:
+
+SELECT DATE, COUNT(*) AS TOTAL FROM XRAY WHERE EXTRACT(MONTH FROM DATE) = '10' GROUP BY DATE
+====================================================================================================
+QUERY 5:
+
+create table public.past_disease(
+past_disease_id varchar(50) not null,
+Disease_name varchar(255) not null,
+encountered_date TIMESTAMP DEFAULT NULL,
+TreatmentTakenByMember varchar(255) not null,
+PRIMARY KEY (disease_id,past_disease_id),
+foreign key(past_disease_id) reference diseasedeatils(disease_id)
+====================================================================================================
+QUERY 6:
+
+alter table public.wearabledevicedata
+add Device_name varchar(100) not null,
+Device_description varchar(200) not null,
+Device_brand varchar(100) not null;
+====================================================================================================
+QUERY 7:
+
+select thalach,slope,Device_name,Device_description,evice_brand from wearabledevicedata;
+=====================================================================================================
+QUERY 8:
+
+SELECT XRAY_ID, DATE FROM XRAY ORDER BY DATE 
+====================================================================================================
+QUERY 9:
+
+SELECT CARDIODIAGNOSIS.MEMBERINFO_MEMBER_ID FROM CARDIODIAGNOSIS 
+INNER JOIN SYMPTOM ON CARDIODIAGNOSIS.CARDIO_ID = SYMPTOM.CARDIODIAGNOSIS_CARDIO_ID 
+WHERE SYMPTOM.CP > 0 AND CARDIODIAGNOSIS.CARDIOARRESTDETECTED = 0
+=====================================================================================================
+QUERY 10:
+
+SELECT DATE, COUNT(DATE) AS TOTAL FROM ECGREPORT WHERE EXTRACT(MONTH FROM DATE) = '11' GROUP BY DATE
+
+======================================================================================================
+QUERY 11:
+
+SIMILAR TO QUERY 5
+======================================================================================================
+QUERY 12:
+
+SIMILAR TO QUERY 6
+======================================================================================================
+QUERY 13:
+
+select * from ecgreport
+======================================================================================================
+QUERY 14:
+
+select * from wearabledevicedata order by date 
+=====================================================================================================
+QUERY 15:
+
+select b.fbs,c.cardioarrestdetected
+from bloodtest as b
+left join cardiodiagnosis as c
+on b.blood_id=b.cardiodiagnosis_cardio_id
+where fbs>99 and cardioarrestdetected=0
+=======================================================================================================
+QUERY 16:
+
+select * from bloodtest
+where data between '2019-10-01' and '2019-10-31'
+=======================================================================================================
+QUERY 17:
+
+SIMILAR AS QUERY 5
+=======================================================================================================
+QUERY 18:
+
+SIMILAR AS QUERY 6
+=======================================================================================================
+QUERY 19:
+
+select * from xray
+======================================================================================================= 
+QUERY 20:
+
+select * from bloodtest order by date 
+=======================================================================================================
+QUERY 21:
+
+select b.bloodpressure,c.cardioarrestdetected
+from bloodtest as b
+left join cardiodiagnosis as c
+on b.blood_id=b.cardiodiagnosis_cardio_id
+where bloodpressure>145 and cardioarrestdetected=0
+========================================================================================================
+QUERY 22:
+
+SELECT COUNT(*) FROM wearabledevices 
+where date between '2019-10-01' and '2019-10-31'
+========================================================================================================
+QUERY 23:
+
+SIMILAR AS QUERY 5
+========================================================================================================
+QUERY 24:
+
+SIMILAR TO 6
+=========================================================================================================
