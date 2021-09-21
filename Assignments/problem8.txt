@@ -1,0 +1,75 @@
+class SalaryCalculator:
+    
+    def GetSalary(self,hra,allowance,basic):
+        self.basic = basic
+        self.hra = hra
+        self.allowancesPercent = allowance
+        
+        self.allowance = self.basic+(self.allowancesPercent)/100 
+        self.salary = self.basic + self.hra + self.allowance
+        
+        
+        return self.salary
+        
+    def GetAllowance(self, basic, allowance):
+        self.allowancesPercent = allowance
+        self.basic = basic
+        self.allowance = self.basic+(self.allowancesPercent)/100
+        return self.allowance
+
+class Employee(SalaryCalculator):
+    def __init__(self, emp_list):
+        self.empl = emp_list
+        self.ALLOWANCES = []
+        self.SALARY = []
+        
+    def GetSalary(self):
+        for emp in range(len(self.empl)):
+            hra = int(input("Enter HRA: "))
+            allowance = int(input("Enter percentage of allowance: "))
+            basic = int(input('Enter Basic: '))
+                                
+            Sal = SalaryCalculator.GetSalary(self,hra,allowance,basic)
+            self.SALARY.append(Sal)
+        return self.SALARY
+    
+    def GetAllowance(self):
+        for emp in range(len(self.empl)):
+            allowance = int(input("Enter percentage of allowance: "))
+            basic = int(input('Enter Basic: '))
+                
+            Allowa= SalaryCalculator.GetAllowance(self,basic, allowance)
+            self.ALLOWANCES.append(Allowa)
+        return self.ALLOWANCES
+        #print(self.SALARY)
+        
+class EmployeeReport(Employee):
+    def __init__(self, emp_list):
+        self.empl = emp_list
+        self.ALLOWANCES = []
+        self.SALARY = []
+        #print(Employee.GetSalary(self))
+        #print(Employee.GetAllowance(self))
+        
+class TestMain():
+    def __init__(self, emp_list):
+        self.empl = emp_list
+        employee_obj = Employee(self.empl)
+        print(employee_obj.GetSalary())
+        print(employee_obj.GetAllowance())
+        
+def main():
+    employees = input("Enter employee names separated by spaces: ").split(' ')
+    Report_date  = input("Enter report date: ")
+    a= TestMain(employees)
+    #employee = Employee(employees)
+    #employee.GetSalary()
+    #employee.GetAllowance
+    #a = EmployeeReport(employees)
+    #Emp_Rep = EmployeeReport()
+    #Emp_Rep.DisplayEmployees(employees)
+    
+    
+    
+if __name__ == "__main__":
+    main()

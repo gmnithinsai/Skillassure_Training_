@@ -1,0 +1,90 @@
+class Roles:
+    def roles(self):
+        self.necess_memb = 3
+        return self.necess_memb
+        
+        
+class SalaryCalculator:
+    
+    def GetSalary(self,hra,allowance,basic):
+        self.basic = basic
+        self.hra = hra
+        self.allowancesPercent = allowance
+        
+        self.allowance = self.basic+(self.allowancesPercent)/100
+        self.salary = self.basic + self.hra + self.allowance
+        
+        
+        return self.salary
+        
+    def GetAllowance(self, basic, allowance):
+        self.allowancesPercent = allowance
+        self.basic = basic
+        self.allowance = self.basic+(self.allowancesPercent)/100
+        return self.allowance
+        
+class RoleBuilder:
+    def GetRoleDescription(self):
+        
+        try:
+            self.Role_Id = int(input("Enter role Description: "))
+            if self.Role_Id == 1 or self.Role_Id == 2 or self.Role_Id == 3 or self.Role_Id == 4:
+                return self.Role_Id
+            else:
+                return "Undefined"
+        except ValueError:
+            return "Undefined"
+        
+        
+        
+class EmployeeReport(RoleBuilder, SalaryCalculator, Roles):
+            
+    def DisplayEmployees(self, emp_list):
+        self.empl = emp_list
+        self.EMP_ID = []
+        self.SALARY = []
+        self.BASIC = []
+        self.HRA = []
+        self.SALARY = []
+        self.ALLOWANCES = []
+
+        
+        for emp in range(len(self.empl)):
+            hra = int(input("Enter HRA: "))
+            allowance = int(input("Enter percentage of allowance: "))
+            basic = int(input('Enter Basic: '))
+            
+            self.BASIC.append(hra)
+            self.HRA.append(hra)
+            
+            RoleID = RoleBuilder.GetRoleDescription(self)
+            self.EMP_ID.append(RoleID)
+            
+            Allowa= SalaryCalculator.GetAllowance(self,basic, allowance)
+            self.ALLOWANCES.append(Allowa)
+        
+            Sal = SalaryCalculator.GetSalary(self,hra,allowance,basic)
+            self.SALARY.append(Sal)
+        role = Roles.roles(self)
+        print()
+        print('-'*60)
+            
+
+        for emp in range(len(self.empl)):
+            print("{}\t{}\t{}\t{}\t{}\t{}\t{}".format(self.EMP_ID[emp], self.empl[emp], role, self.BASIC[emp], self.HRA[emp], self.ALLOWANCES[emp], self.SALARY[emp]))
+            print('-'*60)
+
+class Employee:
+    def __init__(self, emp_list):
+        self.empl = emp_list
+        
+def main():
+    employees = input("Enter employee names separated by spaces: ").split(' ')
+    Report_date  = input("Enter report date: ")
+    Emp_Rep = EmployeeReport()
+    Emp_Rep.DisplayEmployees(employees)
+    
+    
+    
+if __name__ == "__main__":
+    main()

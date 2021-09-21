@@ -1,0 +1,134 @@
+class Roles:
+    def roles(self):
+        self.necess_memb = 3
+        return self.necess_memb
+        
+
+class RoleBuilder:
+    def GetRoleDescription(self, role_ids):
+        self.Role_Id = role_ids
+        role_dict = {1:'role1', 2:'role2', 3:'role3', 4:'role4'}
+        try:
+            if self.Role_Id == 1 or self.Role_Id == 2 or self.Role_Id == 3 or self.Role_Id == 4:
+                return role_dict[self.Role_Id]
+            else:
+                return "Undefined"
+        except ValueError:
+            return "Undefined"
+
+class SalaryCalculator:
+    
+    def GetSalary(self,hra,basic, allowance):
+        self.basic = basic
+        self.hra = hra
+        self.allowancesPercent = allowance
+        
+        self.allowance = self.basic+(self.allowancesPercent)/100 
+        self.salary = self.basic + self.hra + self.allowance
+        
+        
+        return self.salary
+        
+    def GetAllowance(self, basic, allowance):
+        self.allowancesPercent = allowance
+        self.basic = basic
+        self.allowance = self.basic+(self.allowancesPercent)/100
+        return self.allowance
+
+        
+class EmployeeReport(SalaryCalculator, Roles, Employee):
+    def __init__(self,emp_list, BASIC,HRA, ALLOWANCES, EMP_ID ):
+        self.empl = emp_list
+        self.ALLOWANCES = ALLOWANCES
+        self.BASIC = BASIC
+        self.HRA = HRA
+        self.EMP_ID = EMP_ID
+        self.SALARY = []
+        self.ALLOWANCET = []
+        self.DescRole = []
+            
+    def DisplayEmployees(self):
+        
+        for emp in range(len(self.empl)):
+            Sal = SalaryCalculator.GetSalary(self,self.HRA[emp],self.BASIC[emp], self.ALLOWANCES[emp])
+            self.SALARY.append(Sal)
+        
+            Allowa= SalaryCalculator.GetAllowance(self,self.BASIC[emp], self.ALLOWANCES[emp])
+            self.ALLOWANCET.append(Allowa)
+            
+            Role_id = Employee.GetRoleDescription(self, self.EMP_ID[emp])
+            self.DescRole.append(Role_id)
+        
+        
+
+        role = Roles.roles(self)
+        print()
+        print('-'*60)
+            
+
+        for emp in range(len(self.empl)):
+            print("{}\t{}\t{}\t{}\t{}\t{}\t{}".format(self.DescRole[emp], self.empl[emp], role, self.BASIC[emp], self.HRA[emp], self.ALLOWANCET[emp], self.SALARY[emp]))
+            print('-'*60)
+
+
+
+
+class Employee(SalaryCalculator, RoleBuilder):
+    def __init__(self, emp_list, BASIC, HRA, ALLOWANCES, EMP_ID):
+        self.empl = emp_list
+        self.ALLOWANCES = ALLOWANCES
+        self.BASIC = BASIC
+        self.HRA = HRA
+        self.EMP_ID = EMP_ID
+        self.SALARY = []
+        self.ALLOWANCET = []
+        self.DescRole = []
+        
+    def GetSalary(self):
+        for emp in range(len(self.empl)):
+            Sal = SalaryCalculator.GetSalary(self,self.HRA[emp],self.BASIC[emp], self.ALLOWANCES[emp])
+            self.SALARY.append(Sal)
+        return self.SALARY
+    
+    def GetAllowance(self):
+        for emp in range(len(self.empl)):
+            Allowa= SalaryCalculator.GetAllowance(self,self.BASIC[emp], self.ALLOWANCES[emp])
+            self.ALLOWANCET.append(Allowa)
+        return self.ALLOWANCET
+    
+    def GetRoleDescription(self, empid):
+        for emp in range(len(self.empl)):
+            Role_id = RoleBuilder.GetRoleDescription(self, empid)
+            self.DescRole.append(Role_id)
+        return self.DescRole
+    
+class main:
+    def __init__(self):
+        self.employees = input("Enter employee names separated by spaces: ").split(' ')
+        Report_date  = input("Enter report date: ")
+        self.EMP_ID = []
+        self.SALARY = []
+        self.BASIC = []
+        self.HRA = []
+        self.SALARY = []
+        self.ALLOWANCES = []
+        for emp in range(len(self.employees)):
+            hra = int(input("Enter HRA: "))
+            allowance = int(input("Enter percentage of allowance: "))
+            basic = int(input('Enter Basic: '))
+            role_id = int(input('Enter role_id: '))
+            self.BASIC.append(hra)
+            self.HRA.append(hra)
+            self.ALLOWANCES.append(allowance)
+            self.EMP_ID.append(role_id)
+        array_emp_obj = Employee(self.employees, self.BASIC, self.HRA, self.ALLOWANCES, self.EMP_ID)
+        a = EmployeeReport(self.employees, self.BASIC, self.HRA, self.ALLOWANCES, self.EMP_ID)
+        a.DisplayEmployees()
+            
+            
+
+        
+if __name__ == "__main__":
+    m = main()
+    #m.main_()
+   
