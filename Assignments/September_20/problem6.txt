@@ -1,0 +1,25 @@
+6. Write the output of the following program:
+----------------------------------------------
+str = 'abcdefghijkl'
+
+print (str [0:])
+
+print (str[:3])
+
+print (str [1:3])
+
+print (str [1:-1])
+
+print (str[-4: -2])
+
+print (str [5])
+---------------------------------------------
+Output:
+---------------------------------------------
+abcdefghijkl
+abc
+bc
+bcdefghijk
+ij
+f
+---------------------------------------------
