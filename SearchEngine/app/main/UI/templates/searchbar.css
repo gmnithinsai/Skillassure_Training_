@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+body{
+    background: black;
+}
+.main{
+    position: absolute;
+    top:40%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.title{
+    
+    position: absolute;
+    top:20%;
+    left:50%;
+    color:#32e17c;
+    transform: translate(-38%, -40%);
+    font-size:50px;
+    font-family: sans-serif;
+}
+input{
+    border: 3px solid #32e17c;
+    height: 40px;
+    width: 300px;
+    background-color: black;
+    color: white;
+    padding-left: 10px;
+    border-radius: 50px;
+    padding: 0px;
+}
+button{
+    right:auto;
+    margin-left:10px;
+    position:absolute;
+    width:25%;
+    height:40px;
+    background: black;
+    border:3px solid #32e17c;
+    border-radius: 10px;
+    color: white;
+}
